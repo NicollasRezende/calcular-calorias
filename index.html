@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Calorias Corrida</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="titulo">Calculadora de Calorias para Corrida</h1>
+        <form id="calorie-form">
+            <label for="weight" class="texto-principal">Peso (kg):</label>
+            <input type="number" id="weight" name="weight" step="0.1" required>
+
+            <label for="speed" class="texto-principal">Velocidade média (km/h):</label>
+            <input type="number" id="speed" name="speed" step="0.1" required>
+
+            <label for="time" class="texto-principal">Duração da corrida (min):</label>
+            <input type="number" id="time" name="time" required>
+
+            <button type="button" onclick="calculateCalories()">Calcular</button>
+        </form>
+
+        <div id="loader" class="loader" style="display: none;"></div>
+
+        <div id="result-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-explanation">
+        <h2 class="subtitulo">Fórmula Utilizada</h2>
+        <p>A fórmula para calcular as calorias queimadas é:</p>
+        <p><strong>Calorias por minuto = Velocidade (km/h) x Peso (kg) x 0.0175</strong></p>
+        <p>O cálculo final multiplica o valor obtido pelo tempo total de corrida em minutos.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
