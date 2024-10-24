@@ -13,8 +13,8 @@
             <label for="weight" class="texto-principal">Peso (kg):</label>
             <input type="number" id="weight" name="weight" step="0.1" required>
 
-            <label for="speed" class="texto-principal">Velocidade média (km/h):</label>
-            <input type="number" id="speed" name="speed" step="0.1" required>
+            <label for="distance" class="texto-principal">Distância (km):</label>
+            <input type="number" id="distance" name="distance" step="0.1" required>
 
             <label for="time" class="texto-principal">Duração da corrida (min):</label>
             <input type="number" id="time" name="time" required>
@@ -34,9 +34,10 @@
 
     <div class="card-explanation">
         <h2 class="subtitulo">Fórmula Utilizada</h2>
-        <p>A fórmula para calcular as calorias queimadas é:</p>
+        <p>A fórmula combina pace e gasto calórico:</p>
+        <p><strong>Velocidade (km/h) = 60 ÷ Pace (min/km)</strong></p>
         <p><strong>Calorias por minuto = Velocidade (km/h) x Peso (kg) x 0.0175</strong></p>
-        <p>O cálculo final multiplica o valor obtido pelo tempo total de corrida em minutos.</p>
+        <p>O cálculo final multiplica o valor pelo tempo total de corrida em minutos.</p>
     </div>
 
     <script src="script.js"></script>
