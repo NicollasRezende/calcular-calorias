@@ -1,9 +1,9 @@
 function calculateCalories() {
     const weight = parseFloat(document.getElementById("weight").value);
-    const speed = parseFloat(document.getElementById("speed").value);
+    const distance = parseFloat(document.getElementById("distance").value);
     const time = parseFloat(document.getElementById("time").value);
 
-    if (isNaN(weight) || isNaN(speed) || isNaN(time)) {
+    if (isNaN(weight) || isNaN(distance) || isNaN(time)) {
         alert("Por favor, insira valores válidos.");
         return;
     }
@@ -11,6 +11,8 @@ function calculateCalories() {
     document.getElementById("loader").style.display = "block";
 
     setTimeout(function() {
+        const pace = time / distance;
+        const speed = 60 / pace;
         const caloriesPerMinute = speed * weight * 0.0175;
         const totalCalories = caloriesPerMinute * time;
 
